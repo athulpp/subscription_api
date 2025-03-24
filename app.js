@@ -1,5 +1,5 @@
 import express from 'express';
-
+import { PORT } from './config/env.js';
 
 const app = express();
 
@@ -8,8 +8,8 @@ app.get('/',(req,res)=>{
     res.send('Welcome to Subscription')
 })
 //method to listen to server
-app.listen(3000,()=>{
-console.log('Subscription Tracker API is running on the http://localhost:3000');
+app.listen(PORT,()=>{
+console.log(`Subscription Tracker API is running on the http://localhost:${PORT});`);
 })
 
 export default app;
