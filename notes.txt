@@ -1,0 +1,1 @@
+in the package json file added type module to avoid older require keyword instead of that new es6 import mooules
