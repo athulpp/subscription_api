@@ -4,14 +4,24 @@ import userRouter from './routes/user.routes.js';
 import authrouter from './routes/auth.routes.js';
 import subscriptionRouter from './routes/subscription.routes.js';
 import connectToDatabase from './database/mongodb.js';
+import errorMiddleware from './middlewares/error.middleware.js';
+import cookieParser from 'cookie-parser';
 const app = express();
 
+//handle json data and send in requests or Api Calls (built method in express)
+ app.use(express.json());
 
+ //handle helps us to process the form data sent via HTML(built method in express)
+ app.use(express.urlencoded({extended:false}));
+
+ //reads cookie from the incoming request and parses it into a JavaScript object
+ app.use(cookieParser());
 
 app.use('/api/v1/auth',authrouter);
 app.use('/api/v1/user',userRouter);
 app.use('/api/v1/subscriptions',subscriptionRouter);
 
+app.use(errorMiddleware);
 //method to get the request 
 app.get('/',(req,res)=>{
     res.send('Welcome to Subscription')
