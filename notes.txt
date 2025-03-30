@@ -1,2 +1,5 @@
 in the package json file added type module to avoid older require keyword instead of that new es6 import mooules
 Athul@123
+
+jsonWebtoken -authentication
+bcryptjs -to randomized strings to Hash our passwords
