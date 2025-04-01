@@ -26,8 +26,10 @@ app.use(errorMiddleware);
 app.get('/',(req,res)=>{
     res.send('Welcome to Subscription')
 })
+// console.log(PORT,'4444')
 //method to listen to server
 app.listen(PORT,async()=>{
+    console.log(`Server is running on port ${PORT}`);
    await connectToDatabase();
 console.log(`Subscription Tracker API is running on the http://localhost:${PORT});`);
 })

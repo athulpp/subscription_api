@@ -6,9 +6,14 @@ if(!DB_URI){
 }
 
 const connectToDatabase=async()=>{
-    // console.log(`Connecting to MongoDB: ${DB_URI}`);
+    console.log(`Connecting to MongoDB: ${DB_URI}`);
     try{
-        await mongoose.connect(DB_URI);
+        await mongoose.connect(DB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            connectTimeoutMS: 30000,  // 30 seconds
+            serverSelectionTimeoutMS: 30000,
+        });
         console.log(`MongoDB connected: ${NODE_ENV}`);
 
     }catch(error){
