@@ -3,3 +3,7 @@ Athul@123
 
 jsonWebtoken -authentication
 bcryptjs -to randomized strings to Hash our passwords
+
+
+token->eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlYmMxOWU4NmVjYWMxNjNhMDY3NDQiLCJpYXQiOjE3NDM2OTg5NjksImV4cCI6MTc0Mzc4NTM2OX0.APHvccjhlBo4XdhRZZ6k344vbNuhTX5lUt33g4z9BrM
+_Id-> 67eebc19e86ecac163a06744
