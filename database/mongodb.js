@@ -11,7 +11,8 @@ const connectToDatabase=async()=>{
         await mongoose.connect(DB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            connectTimeoutMS: 30000,  // 30 seconds
+            family: 4, // this helps with IPv4 and IPv6 issues
+            connectTimeoutMS: 30000,    
             serverSelectionTimeoutMS: 30000,
         });
         console.log(`MongoDB connected: ${NODE_ENV}`);
