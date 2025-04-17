@@ -6,6 +6,7 @@ import subscriptionRouter from './routes/subscription.routes.js';
 import connectToDatabase from './database/mongodb.js';
 import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from 'cookie-parser';
+import arcjetMiddleware from './middlewares/arcjet.middleware.js';
 const app = express();
 
 //handle json data and send in requests or Api Calls (built method in express)
@@ -16,6 +17,7 @@ const app = express();
 
  //reads cookie from the incoming request and parses it into a JavaScript object
  app.use(cookieParser());
+ app.use(arcjetMiddleware);
 
 app.use('/api/v1/auth',authrouter);
 app.use('/api/v1/user',userRouter);
